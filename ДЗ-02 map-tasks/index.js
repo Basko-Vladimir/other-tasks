@@ -61,7 +61,7 @@ console.log(arr6);
 
 // 9. Есть массив объектов users [{age: 11, name: Vasja}, {age: 13, name: Ivan}, {age: 18, name: Katya}, {age: 23, name: Andrey}].
 // Отфильтровать данный массив чтобы в нем находились пользователи которым 18 лет и выше.
-let arr7 = [{age: 11, name: 'Vasja'}, {age: 13, name: 'Ivan'}, {age: 18, name: 'Katya'}, {age: 23, name: 'Andrey'}];
+let arr7 = [{age: 11, name: 'Vasia'}, {age: 13, name: 'Ivan'}, {age: 18, name: 'Katya'}, {age: 23, name: 'Andrey'}];
 arr7 = arr7.filter( elem => elem.age >= 18);
 console.log(arr7);
 
@@ -82,3 +82,43 @@ console.log(arr9);
 let arr10 = [1, 2, 3, 4, 5, 6, 7];
 arr10 = arr10.filter( elem => elem % 2 === 0);
 console.log(arr10);
+
+// 13. Найдите сумму всех элементов массива.
+// Используйте метод массивов 'reduce'.
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+let arr11 = [1, 2, 3, 4, 5, 6];
+let sum;
+sum = arr11.reduce((accum, current) => accum + current, 0);
+console.log(sum);
+
+// 14.Создайте функцию "average", которая принимает массив из чисел и возвращает среднее арифметическое
+// значение элементов массива.
+let arr12 = [1, 2, 3, 4, 5, 6];
+let average = (arr) => {
+    let sum  = arr.reduce((accum, current) => accum + current );
+    return sum/arr.length;
+};
+console.log(average(arr12));
+
+
+//15.Дан произвольный массив из чисел. Напишите функцию, которая возвращает максимальное значение из массива.
+// Подумайте, каким ещё способом это мложно сделать?
+// Это домашка!!!!!
+// Посмотреть метод "sort";
+// Всё сделал? Красавчик! :)))))
+arr13 = [12, 45, 0, 5, 123, 4000];
+let max = 0;
+// ---через map-----------------
+arr13.map( el => {
+    if (el > max){
+        max = el;
+    }
+    return max;
+}) ;
+console.log(max);
+//-------через sort----------
+function maxNumber (arr){
+    console.log(arr.sort((a, b) => b-a).shift());
+}
+maxNumber(arr13);
+
